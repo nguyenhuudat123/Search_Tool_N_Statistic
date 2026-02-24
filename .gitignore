@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Môi trường ảo (nếu sau này có dùng)
+venv/
+env/
+.env
+
+# Hệ điều hành
+.DS_Store
+Thumbs.db
+
+# Tệp cá nhân tuyệt đối không đẩy lên GitHub
+ghichu_canhan.md
