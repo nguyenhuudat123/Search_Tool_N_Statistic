@@ -1,5 +1,5 @@
 # full ok
-# usingh
+# using
 
 
 import tkinter as tk
