@@ -8,14 +8,16 @@
 ## 🗂 Mục lục
 
 1. [Tổng quan](#1-tổng-quan)
-2. [Yêu cầu cài đặt](#2-yêu-cầu-cài-đặt)
-3. [Chạy nhanh](#3-chạy-nhanh)
-4. [Giao diện](#4-giao-diện)
-5. [3 Phần chức năng](#5-3-phần-chức-năng)
-6. [So sánh v3 → v4](#6-so-sánh-v3--v4-những-gì-đã-thay-đổi)
-7. [Luồng xử lý](#7-luồng-xử-lý)
-8. [Cấu trúc code](#8-cấu-trúc-code)
-9. [Ghi chú & lưu ý](#9-ghi-chú--lưu-ý)
+2. [Cấu trúc thư mục](#2-cấu-trúc-thư-mục)
+3. [Ảnh minh họa](#3-ảnh-minh-họa)
+4. [Yêu cầu cài đặt](#4-yêu-cầu-cài-đặt)
+5. [Chạy nhanh](#5-chạy-nhanh)
+6. [Giao diện](#6-giao-diện)
+7. [3 Phần chức năng](#7-3-phần-chức-năng)
+8. [So sánh v3 → v4](#8-so-sánh-v3--v4-những-gì-đã-thay-đổi)
+9. [Luồng xử lý](#9-luồng-xử-lý)
+10. [Cấu trúc code](#10-cấu-trúc-code)
+11. [Ghi chú & lưu ý](#11-ghi-chú--lưu-ý)
 
 ---
 
@@ -31,7 +33,44 @@
 
 ---
 
-## 2. Yêu cầu cài đặt
+## 2. Cấu trúc thư mục
+
+```
+Search_Tool_N_Statistic/          ← Repository (Public)
+├── images/
+│   ├── start_v4.png              ← Ảnh giao diện lúc khởi động
+│   ├── end_v4.png                ← Ảnh kết quả sau khi chạy xong
+│   └── require.png               ← Ảnh file Excel mẫu cần chuẩn bị
+├── .gitignore
+├── README.md
+├── main_v3.py                    ← Phiên bản cũ (tham khảo)
+├── main_v4.py                    ← Phiên bản hiện tại ✅
+└── requirements.txt
+```
+
+---
+
+## 3. Ảnh minh họa
+
+### 📋 Dữ liệu đầu vào — File Excel cần chuẩn bị
+
+![Require](images/require.png)
+
+---
+
+### 🚀 Giao diện lúc bắt đầu chạy
+
+![Start v4](images/start_v4.png)
+
+---
+
+### ✅ Kết quả sau khi hoàn thành
+
+![End v4](images/end_v4.png)
+
+---
+
+## 4. Yêu cầu cài đặt
 
 ```bash
 pip install selenium webdriver-manager
@@ -43,7 +82,7 @@ pip install selenium webdriver-manager
 
 ---
 
-## 3. Chạy nhanh
+## 5. Chạy nhanh
 
 ```bash
 python main_v4.py
@@ -53,7 +92,7 @@ Giao diện Tkinter sẽ tự mở. Không cần cấu hình thêm.
 
 ---
 
-## 4. Giao diện
+## 6. Giao diện
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -84,7 +123,7 @@ Giao diện Tkinter sẽ tự mở. Không cần cấu hình thêm.
 
 ---
 
-## 5. 3 Phần chức năng
+## 7. 3 Phần chức năng
 
 ### Phần 1 — Rank + Đếm (Naver Search)
 
@@ -123,7 +162,7 @@ Giao diện Tkinter sẽ tự mở. Không cần cấu hình thêm.
 
 ---
 
-## 6. So sánh v3 → v4 (những gì đã thay đổi)
+## 8. So sánh v3 → v4 (những gì đã thay đổi)
 
 | Tính năng | `main_v3` | `main_v4` |
 |-----------|-----------|-----------|
@@ -144,7 +183,7 @@ Giao diện Tkinter sẽ tự mở. Không cần cấu hình thêm.
 
 ---
 
-## 7. Luồng xử lý
+## 9. Luồng xử lý
 
 ### Phần 1 & 2 (đa luồng)
 
@@ -182,7 +221,7 @@ def isleep(self, seconds):
 
 ---
 
-## 8. Cấu trúc code
+## 10. Cấu trúc code
 
 ```
 main_v4.py
@@ -233,7 +272,7 @@ main_v4.py
 
 ---
 
-## 9. Ghi chú & lưu ý
+## 11. Ghi chú & lưu ý
 
 - **Phần 1, 2, 3 hoàn toàn độc lập** — có thể Start cả 3 cùng lúc, mỗi phần mở Chrome riêng và dùng dữ liệu keyword riêng.
 - **Tăng luồng** (Phần 1/2) sẽ mở thêm Chrome — máy cần đủ RAM (mỗi Chrome ~150–300 MB).
